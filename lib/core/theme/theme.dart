@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:zoom_clone/constants/colors.dart';
 
 ThemeData lightTheme(BuildContext context) {
   return ThemeData.light().copyWith(
@@ -10,12 +11,8 @@ ThemeData lightTheme(BuildContext context) {
     brightness: Brightness.light,
     dividerColor: Colors.black,
     colorScheme: Theme.of(context).colorScheme.copyWith(primary: Colors.black),
-    textTheme: ThemeData.light().textTheme.apply(
-
-    ),
-    primaryTextTheme: ThemeData.light().textTheme.apply(
-
-    ),
+    textTheme: ThemeData.light().textTheme.apply(),
+    primaryTextTheme: ThemeData.light().textTheme.apply(),
     inputDecorationTheme: InputDecorationTheme(
       focusColor: Colors.cyan,
       filled: true,
@@ -55,17 +52,14 @@ ThemeData lightTheme(BuildContext context) {
 //===============================================================
 ThemeData darkTheme(BuildContext context) {
   return ThemeData.dark().copyWith(
+    scaffoldBackgroundColor: backgroundColor,
     pageTransitionsTheme: const PageTransitionsTheme(
       builders: <TargetPlatform, PageTransitionsBuilder>{
         TargetPlatform.android: ZoomPageTransitionsBuilder(),
       },
     ),
-    textTheme: ThemeData.dark().textTheme.apply(
-
-    ),
-    primaryTextTheme: ThemeData.dark().textTheme.apply(
-
-    ),
+    textTheme: ThemeData.dark().textTheme.apply(),
+    primaryTextTheme: ThemeData.dark().textTheme.apply(),
     textSelectionTheme: const TextSelectionThemeData(
       cursorColor: Colors.grey,
     ),

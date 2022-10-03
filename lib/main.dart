@@ -31,7 +31,7 @@ void main() async {
   await EasyLocalization.ensureInitialized();
   //===============================================================
   await CacheHelper.init();
-  await CacheHelper.getTheme ?? await CacheHelper.cacheTheme(value: false);
+  await CacheHelper.getTheme ?? await CacheHelper.cacheTheme(value: true);
   bool? isDark = await CacheHelper.getTheme;
   //===============================================================
   BlocOverrides.runZoned(
@@ -60,8 +60,7 @@ class MyApp extends StatelessWidget {
           builder: (context, state) {
             var themeCubit = ThemeCubit.get(context).isDark;
             return MaterialApp(
-              //TODO: add your application name here
-              title: '',
+              title: 'Zoom Clone',
               debugShowCheckedModeBanner: false,
               navigatorKey: navigatorKey,
               onGenerateRoute: onGenerateRoute,
