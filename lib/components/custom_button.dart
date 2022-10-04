@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 import '../constants/colors.dart';
 
 class CustomButton extends StatelessWidget {
-  final String text;
+  final Widget child;
   final VoidCallback onPressed;
   const CustomButton({
     Key? key,
-    required this.text,
+    required this.child,
     required this.onPressed,
   }) : super(key: key);
 
@@ -28,12 +28,7 @@ class CustomButton extends StatelessWidget {
             side: const BorderSide(color: buttonColor),
           ),
         ),
-        child: Text(
-          text,
-          style: const TextStyle(
-            fontSize: 17,
-          ),
-        ),
+        child: child,
       ),
     );
   }
