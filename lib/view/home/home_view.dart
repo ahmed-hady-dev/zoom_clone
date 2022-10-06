@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:zoom_clone/components/home_meeting_button.dart';
 import 'package:zoom_clone/constants/colors.dart';
 import 'package:zoom_clone/view/home/controller/home_cubit.dart';
+import 'package:zoom_clone/view/home/meeting_view.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({Key? key}) : super(key: key);
@@ -49,23 +49,7 @@ class HomeView extends StatelessWidget {
                 ),
               ],
             ),
-            body: Column(
-              children: <Widget>[
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: <Widget>[
-                    HomeMeetingButton(onPressed: () {}, icon: Icons.videocam, text: 'New Meeting'),
-                    HomeMeetingButton(onPressed: () {}, icon: Icons.add_box_rounded, text: 'Join Meeting'),
-                    HomeMeetingButton(onPressed: () {}, icon: Icons.calendar_today, text: 'Schedule'),
-                    HomeMeetingButton(onPressed: () {}, icon: Icons.arrow_upward_rounded, text: 'Share Screen'),
-                  ],
-                ),
-                Expanded(
-                    child: Center(
-                        child: Text('Create/Join Meetings with just a click',
-                            style: Theme.of(context).textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold))))
-              ],
-            ),
+            body: cubit.homePages[cubit.currentIndex],
           );
         },
       ),
