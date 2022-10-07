@@ -11,4 +11,8 @@ class GoogleSIgnInHelper {
     );
     return auth.signInWithCredential(credential);
   }
+
+  static Future<void> googleSignOutMethod() async {
+    await GoogleSignIn(scopes: ['email']).signOut();
+  }
 }

@@ -20,36 +20,7 @@ class CacheHelper {
   }
 
 //===============================================================
-
-  static Future<void> cacheSound({required bool? value}) async {
-    await _appBox.write('isSoundOn', value);
-  }
-
-  static Future<bool?> get getSound async {
-    bool? isSoundOn;
-    if (_appBox.hasData('isSoundOn')) {
-      isSoundOn = _appBox.read('isSoundOn');
-    }
-    return isSoundOn;
-  }
-
-//===============================================================
-
-  static Future<void> cacheShowCase({required bool? value}) async {
-    await _appBox.write('isFirstTime', value);
-  }
-
-  static Future<bool?> get getShowCase async {
-    bool? isFirstTime;
-    if (_appBox.hasData('isFirstTime')) {
-      isFirstTime = _appBox.read('isFirstTime');
-    }
-    return isFirstTime;
-  }
-
-//===============================================================
-  static Future<void> write(
-      {required String key, required dynamic value}) async {
+  static Future<void> write({required String key, required dynamic value}) async {
     return await _appBox.write(key, value);
   }
 

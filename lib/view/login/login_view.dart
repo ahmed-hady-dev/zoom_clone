@@ -43,7 +43,6 @@ class LoginView extends StatelessWidget {
                     onPressed: () async {
                       await cubit.signInWithGoogle(context: context);
                       MagicRouter.navigateAndPopAll(const HomeView());
-                      print('------------Done----------');
                     }),
               ],
             ),

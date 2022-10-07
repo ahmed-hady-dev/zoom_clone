@@ -10,7 +10,6 @@ import 'core/theme/theme.dart';
 import 'core/theme/theme_cubit.dart';
 
 import 'core/blocObserver/bloc_observer.dart';
-import 'core/dioHelper/dio_helper.dart';
 import 'core/router/router.dart';
 import 'view/home/home_view.dart';
 
@@ -27,8 +26,6 @@ void main() async {
     }
     home ??= const LoginView();
   });
-  //===============================================================
-  DioHelper.init();
   //===============================================================
   await EasyLocalization.ensureInitialized();
   //===============================================================

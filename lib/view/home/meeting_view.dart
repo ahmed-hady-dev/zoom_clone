@@ -3,6 +3,8 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:zoom_clone/components/home_meeting_button.dart';
+import 'package:zoom_clone/core/router/router.dart';
+import 'package:zoom_clone/view/video_call/vidoe_call_view.dart';
 
 import 'controller/home_cubit.dart';
 
@@ -14,8 +16,8 @@ class MeetingView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final cubit = HomeCubit.get(context);
-    var ramdom = Random();
-    String roomName = (ramdom.nextInt(1000000) + 1000000).toString();
+    var random = Random();
+    String roomName = (random.nextInt(1000000) + 1000000).toString();
     return BlocListener<HomeCubit, HomeState>(
       listener: (context, state) {},
       child: Column(
@@ -29,9 +31,21 @@ class MeetingView extends StatelessWidget {
                   },
                   icon: Icons.videocam,
                   text: 'New Meeting'),
-              HomeMeetingButton(onPressed: () {}, icon: Icons.add_box_rounded, text: 'Join Meeting'),
-              HomeMeetingButton(onPressed: () {}, icon: Icons.calendar_today, text: 'Schedule'),
-              HomeMeetingButton(onPressed: () {}, icon: Icons.arrow_upward_rounded, text: 'Share Screen'),
+              HomeMeetingButton(
+                onPressed: () => MagicRouter.navigateTo(const VideoCallView()),
+                icon: Icons.add_box_rounded,
+                text: 'Join Meeting',
+              ),
+              HomeMeetingButton(
+                onPressed: () {},
+                icon: Icons.calendar_today,
+                text: 'Schedule',
+              ),
+              HomeMeetingButton(
+                onPressed: () {},
+                icon: Icons.arrow_upward_rounded,
+                text: 'Share Screen',
+              ),
             ],
           ),
           Expanded(

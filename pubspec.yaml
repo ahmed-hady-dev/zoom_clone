@@ -11,16 +11,12 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  dio: ^4.0.6
   flutter_bloc: ^8.1.1
-  cupertino_icons: ^1.0.5
   easy_localization: ^3.0.1
-  font_awesome_flutter: ^10.2.1
   fluttertoast: ^8.0.9
-  nil: ^1.1.1
   get_storage: ^2.0.3
-  cloud_firestore: ^3.5.0
-  firebase_auth: ^3.11.1
+  cloud_firestore: ^3.5.1
+  firebase_auth: ^3.11.2
   firebase_core: ^1.24.0
   google_sign_in: ^5.4.2
   intl: ^0.17.0
