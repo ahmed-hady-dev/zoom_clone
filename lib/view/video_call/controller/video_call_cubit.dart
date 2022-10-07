@@ -58,6 +58,7 @@ class VideoCallCubit extends Cubit<VideoCallState> {
         ..videoMuted = isVideoMuted;
 
       _firestoreHelper.addToMeetingHistory(roomName: meetingIdController.text);
+
       await JitsiMeet.joinMeeting(options);
     } catch (error) {
       debugPrint("error: $error");
